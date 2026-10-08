@@ -1,0 +1,38 @@
+{
+  "name": "@tiana/node-sqlite",
+  "version": "0.1.0-dev.0",
+  "description": "Async SQLite sessions over the generic Tiana Node transport",
+  "type": "module",
+  "private": true,
+  "sideEffects": false,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:types": "tsc -p test/types/tsconfig.json",
+    "test:package": "node scripts/package-smoke.mjs"
+  },
+  "dependencies": {
+    "@tiana/node": "git+https://github.com/tianacloud/sdk-node.git#beb05888c733e590d3dc40f1c3f070b703ca10dd",
+    "lossless-json": "4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.13",
+    "typescript": "5.9.3"
+  }
+}
